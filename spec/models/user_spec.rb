@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it "test user creation" do
-    @user = create(:user)
+    @user = build(:user)
     expect(@user).to be_valid
   end
 
   it "test user creation with not unique username" do
-    @user = create(:user, mail: "admin2@example.com")
+    @user = create(:user, email: "admin2@example.com")
     @user2 = build(:user)
     expect(@user2).to_not be_valid
   end
@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
   end
 
   it "test new user creation with longer than 20 characters username not to be valid" do
-    @user = create(:user, username: "hhghghghghghghghghg")
+    @user = build(:user, username: "hhghghghghghghghghgds")
     expect(@user).to_not be_valid
   end
 end

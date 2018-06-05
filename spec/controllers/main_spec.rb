@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'index' do
   scenario 'loading index page' do
 # 1. go to root
